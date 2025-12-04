@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pagina web per il download dei report di sostenibilità di un’impresa del settore secondario</title>
+  <link rel="stylesheet" href="stile.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="mainbar">
+    <div class="mainbar-inner">
+      <a href="https://www.pirelli.com/global/en-ww/homepage/" class="mainbar-logo-wrapper">
+        <img src="logo_pirelli.jpg" alt="Pirelli Logo" class="mainbar-logo">
+      </a>
+
+      <!-- Selezione della lingua -->
+      <div class="mainbar-lang-wrapper">
+        <select class="mainbar-lang" aria-label="Selezione lingua" onchange="cambiaLingua(this.value)">
+          <option value="it" selected>IT</option>
+          <option value="en">EN</option>
+          <option value="de">DE</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <!-- Griglia Principale -->
+  <main class="grid">
+
+    <!-- Sezione Card download con bottoni -->
+    <section class="card overview" id="card-overview">
+      <!-- Titolo Primario -->
+      <h1 id="titolo-pagina">Download report di Sostenibilità Pirelli</h1>
+
+      <!-- Primo gruppo di bottoni -->
+      <div class="btn-container">
+        <a class="btn btn-card" id="btn-scarica-2" href="https://corporate.pirelli.com/corporate/it-it/sostenibilita/sostenibilita" target="_blank">
+          <span>Visita la pagina sostenibilità Pirelli</span>
+        </a>
+        <a class="btn btn-card" id="btn-scarica" href="https://corporate.pirelli.com/corporate/it-it/sostenibilita/reportistica" target="_blank">
+          <span>Tutti i Report di Sostenibilità</span>
+        </a>
+      </div>
+
+      <!-- Titolo secondario -->
+      <h2 id="titolo-secondario" class="titolo-secondario">Report degli ultimi 5 anni</h2>
+
+      <!-- Secondo gruppo di bottoni -->
+      <div class="btn-container">
+        <a class="btn btn-card" id="btn-scarica-1" href="https://corp-assets.pirelli.com/corporate/PIRELLI_ANNUAL_REPORT_2024_ITA.pdf" target="_blank">
+          <span>Scarica il report 2024</span>
+        </a>
+        <a class="btn btn-card" id="btn-scarica-3" href="https://corp-assets.pirelli.com/corporate/PIRELLI_ANNUAL_REPORT_2023_ITA.pdf" target="_blank">
+          <span>Scarica il report 2023</span>
+        </a>
+        <a class="btn btn-card" id="btn-scarica-4" href="https://corp-assets.pirelli.com/corporate/AR22_ITA_COMPLETO_INTERATTIVO.pdf" target="_blank">
+          <span>Scarica il report 2022</span>
+        </a>
+        <a class="btn btn-card" id="btn-scarica-5" href="https://corp-assets.pirelli.com/corporate/AR21_ITA_MONTATO_INTERATTIVO_0509_72dpi.pdf" target="_blank">
+          <span>Scarica il report 2021</span>
+        </a>
+        <a class="btn btn-card" id="btn-scarica-6" href="https://corp-assets.pirelli.com/corporate/PIRELLI_ANNUAL_REPORT_2020_ITA_INTERATTIVO.pdf" target="_blank">
+          <span>Scarica il report 2020</span>
+        </a>
+      </div>
+
+      <!-- Sezione riconoscimenti -->
+      <section class="riconoscimenti">
+          <!-- Titolo dei riconoscimenti -->
+        <h2 id="titolo-riconoscimenti" class="riconoscimenti-titolo">
+          Grazie a un impegno costante, Pirelli ha raggiunto <strong>obiettivi ambiziosi</strong> e <strong>numerosi riconoscimenti a livello internazionale</strong>.
+        </h2>
+      
+        <!-- Contenitore dei loghi delle aziende con alcuni link -->
+        <div class="loghi-container">
+          <a href="https://press.pirelli.com/it/pirelli-tra-le-aziende-top-1-nel-sustainability-yearbook-2025-di-sp-global-unico-produttore-di-pneumatici-a-livello-globale/" target="_blank">
+            <img src="logo_sp_global.png" alt="S&P Global" class="logo-premio">
+          </a>
+          <img src="logo_moodys.png" alt="Moody's" class="logo-premio">
+          <a href="https://press.pirelli.com/it/pirelli-si-riconferma-al-primo-posto-a-livello-globale-nei-settori-auto-components-e-automobiles-degli-indici-sp-dow-jones-sustainability/" target="_blank">
+            <img src="logo_dowjones.png" alt="Dow Jones Sustainability Indices" class="logo-premio">
+          </a>
+          <img src="logo_esg.png" alt="ESG Solutions" class="logo-premio">
+          <img src="logo_sustainalytics.png" alt="Sustainalytics" class="logo-premio">
+          <img src="logo_msci.png" alt="MSCI" class="logo-premio">
+          <img src="logo_ftse4good.png" alt="FTSE4Good" class="logo-premio">
+          <img src="logo_ecovadis.png" alt="Ecovadis" class="logo-premio">
+          <img src="logo_cdp1.png" alt="CDP A List" class="logo-premio">
+          <a href="https://press.pirelli.com/it/pirelli-cdp-conferma-il-rating-massimo-per-il-contrasto--al-cambiamento-climatico" target="_blank">
+            <img src="logo_cdp2.png" alt="CDP A List" class="logo-premio">
+          </a>
+        </div>
+      </section>
+    </section>
+
+          <!-- Sezione Card KPI -->
+    <aside class="card" id="card-kpis">
+            <!-- Titolo Card KPI -->
+      <h2 id="titolo-kpis">KPI principali</h2>
+     <!-- Contenitore dei Box delle KPI -->
+      <div id="kpis-grid">
+        <div class="kpi-box">
+          <div class="value">-57%</div>
+          <div class="label">Riduzione emissioni Scope 1+2 (vs 2018)</div>
+        </div>
+        <div class="kpi-box">
+          <div class="value">2040</div>
+          <div class="label">Obiettivo Net Zero</div>
+        </div>
+        <div class="kpi-box">
+          <div class="value">>55%</div>
+          <div class="label">Materiali naturali/riciclati P ZERO (2023)</div>
+        </div>
+        <div class="kpi-box">
+          <div class="value">-60%</div>
+          <div class="label">Riduzione prelievo idrico target 2030</div>
+        </div>
+      </div>
+    </aside>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-content">
+      <img src="logo_pirelli.jpg" alt="Logo Pirelli" class="footer-logo">
+      <p>© 2025 Pirelli & C. S.p.A.</p>
+    </div>
+  </footer>
+
+  <!-- Script per cambio lingua -->
+  <script>
+    const testi = {
+      it: {
+        titolo: "Download report di Sostenibilità Pirelli",
+        titoloSecondario: "Report degli ultimi 5 anni",
+        titoloKPI: "KPI principali",
+        btn: "Tutti i Report di Sostenibilità",
+        btn1: "Scarica il report 2024",
+        btn3: "Scarica il report 2023",
+        btn4: "Scarica il report 2022",
+        btn5: "Scarica il report 2021",
+        btn6: "Scarica il report 2020",
+        btn2: "Visita la pagina sostenibilità Pirelli",
+        riconoscimenti: "Grazie a un impegno costante, Pirelli ha raggiunto <strong>obiettivi ambiziosi</strong> e <strong>numerosi riconoscimenti a livello internazionale</strong>.",
+        kpis: `
+          <div class="kpi-box"><div class="value">-57%</div><div class="label">Riduzione emissioni Scope 1+2 (vs 2018)</div></div>
+          <div class="kpi-box"><div class="value">2040</div><div class="label">Obiettivo Net Zero</div></div>
+          <div class="kpi-box"><div class="value">>55%</div><div class="label">Materiali naturali/riciclati P ZERO (2023)</div></div>
+          <div class="kpi-box"><div class="value">-60%</div><div class="label">Riduzione prelievo idrico target 2030</div></div>
+        `
+      },
+      en: {
+        titolo: "Pirelli Sustainability Reports Download",
+        titoloSecondario: "Reports of the Last 5 Years",
+        titoloKPI: "Main KPIs",
+        btn: "All Sustainability Reports",
+        btn1: "Download 2024 Report",
+        btn3: "Download 2023 Report",
+        btn4: "Download 2022 Report",
+        btn5: "Download 2021 Report",
+        btn6: "Download 2020 Report",
+        btn2: "Visit Pirelli Sustainability Page",
+        riconoscimenti: "Thanks to consistent commitment, Pirelli has achieved <strong>ambitious goals</strong> and <strong>numerous international recognitions</strong>.",
+        kpis: `
+          <div class="kpi-box"><div class="value">-57%</div><div class="label">Scope 1+2 Emission Reduction (vs 2018)</div></div>
+          <div class="kpi-box"><div class="value">2040</div><div class="label">Net Zero Target</div></div>
+          <div class="kpi-box"><div class="value">>55%</div><div class="label">Natural/Recycled materials P ZERO (2023)</div></div>
+          <div class="kpi-box"><div class="value">-60%</div><div class="label">Water withdrawal reduction target 2030</div></div>
+        `
+      },
+      de: {
+        titolo: "Pirelli Nachhaltigkeitsberichte Download",
+        titoloSecondario: "Berichte der letzten 5 Jahre",
+        titoloKPI: "Haupt-KPIs",
+        btn: "Alle Nachhaltigkeitsberichte",
+        btn1: "2024 Bericht herunterladen",
+        btn3: "2023 Bericht herunterladen",
+        btn4: "2022 Bericht herunterladen",
+        btn5: "2021 Bericht herunterladen",
+        btn6: "2020 Bericht herunterladen",
+        btn2: "Besuche Pirelli Nachhaltigkeitsseite",
+        riconoscimenti: "Dank konsequentem Engagement hat Pirelli <strong>ambitionierte Ziele</strong> erreicht und <strong>zahlreiche internationale Anerkennungen</strong> erhalten.",
+        kpis: `
+          <div class="kpi-box"><div class="value">-57%</div><div class="label">Reduzierung Scope 1+2 Emissionen (vs 2018)</div></div>
+          <div class="kpi-box"><div class="value">2040</div><div class="label">Net Zero Ziel</div></div>
+          <div class="kpi-box"><div class="value">>55%</div><div class="label">Natürliche/reciclierte Materialien P ZERO (2023)</div></div>
+          <div class="kpi-box"><div class="value">-60%</div><div class="label">Reduzierung Wasserverbrauch Ziel 2030</div></div>
+        `
+      }
+    };
+
+    function cambiaLingua(lang) {
+      // Aggiorna titoli
+      document.getElementById('titolo-pagina').textContent = testi[lang].titolo;
+      document.getElementById('titolo-secondario').textContent = testi[lang].titoloSecondario;
+      document.getElementById('titolo-kpis').textContent = testi[lang].titoloKPI;
+
+      // Aggiorna bottoni
+      document.querySelector('#btn-scarica span').textContent = testi[lang].btn;
+      document.querySelector('#btn-scarica-1 span').textContent = testi[lang].btn1;
+      document.querySelector('#btn-scarica-2 span').textContent = testi[lang].btn2;
+      document.querySelector('#btn-scarica-3 span').textContent = testi[lang].btn3;
+      document.querySelector('#btn-scarica-4 span').textContent = testi[lang].btn4;
+      document.querySelector('#btn-scarica-5 span').textContent = testi[lang].btn5;
+      document.querySelector('#btn-scarica-6 span').textContent = testi[lang].btn6;
+
+      // Aggiorna riconoscimenti e KPI
+      document.getElementById('titolo-riconoscimenti').innerHTML = testi[lang].riconoscimenti;
+      document.getElementById('kpis-grid').innerHTML = testi[lang].kpis;
+    }
+  </script>
+
+</body>
+</html>

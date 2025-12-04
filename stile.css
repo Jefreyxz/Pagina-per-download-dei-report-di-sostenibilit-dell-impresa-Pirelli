@@ -1,0 +1,322 @@
+/* =============================== VARIABILI GLOBALI =============================== */
+:root {
+  --bg: #0f1724;            /* sfondo principale */
+  --card: #0b1220;          /* sfondo delle card */
+  --accent: #ffcc00;        /* colore accento / bottoni */
+  --radius: 12px;           /* raggio bordi card e bottoni */
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+/* =============================== RESET PAGINA BASE =============================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(180deg, var(--bg), #071025 80%);
+  color: #e6eef8;
+  font-family: var(--font-family);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.45;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Main si espande tra header e footer */
+main {
+  flex: 1 0 auto;
+}
+
+/* Padding generico */
+header, main, section, aside {
+  padding: 2rem;
+}
+
+/* =============================== GRIGLIA PRINCIPALE =============================== */
+.grid {
+  display: grid;
+  background-color: rgba(11, 18, 32, 0.95);
+  gap: 1rem;
+  align-items: stretch; /* tutte le card stessa altezza */
+}
+
+@media (min-width: 900px) {
+  .grid {
+    grid-template-columns: 1.25fr 1fr;
+  }
+}
+
+/* =============================== CARD DOWNLOAD =============================== */
+.card {
+  background-color: rgba(11, 18, 32, 0.95);   /* overlay uniforme */
+  backdrop-filter: blur(4px);                 /*effetto vetro*/
+  border-radius: var(--radius);
+  padding: 1rem;
+  box-shadow: 0 6px 18px rgba(2, 6, 23, 0.6);
+}
+
+/* =============================== CARD KPI =============================== */
+#card-kpis {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 1rem;
+  position: relative;
+}
+
+#titolo-kpis {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #fff;
+  font-size: 3rem;
+}
+
+#kpis-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 3rem;
+  width: 90%;
+  max-width: 800px;
+  margin: auto 0;
+}
+
+.kpi-box {
+  background-color: var(--card);
+  border: 1px solid var(--accent);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
+  width: 100%;
+  min-height: 160px;
+}
+
+.kpi-box .value {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--accent);
+  margin-bottom: 0.4rem;
+}
+
+.kpi-box .label {
+  font-size: 0.9rem;
+  color: #e6eef8;
+}
+
+@media (max-width: 600px) {
+  #kpis-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 0.5rem;
+  }
+  .kpi-box {
+    min-height: 120px;
+  }
+}
+
+/* =============================== HEADER =============================== */
+.mainbar {
+  width: 100%;
+  background-color: var(--accent);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mainbar-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+}
+
+.mainbar-logo {
+  height: 35px;
+  width: auto;
+}
+
+.mainbar-lang-wrapper {
+  position: relative;
+}
+
+.mainbar-lang {
+  padding: 0.4rem 1.2rem 0.4rem 0.6rem;
+  font-size: 0.9rem;
+  border-radius: 999px;
+  border: 1px solid var(--accent);
+  background-color: var(--card);
+  color: var(--accent);
+  cursor: pointer;
+  appearance: none;
+}
+
+.mainbar-lang::after {
+  content: "▼";
+  position: absolute;
+  right: 0.6rem;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: var(--accent);
+  font-size: 0.7rem;
+}
+
+.mainbar-lang:hover {
+  background-color: #171f33;
+}
+
+.mainbar-lang:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(255, 204, 0, 0.7);
+}
+
+@media (max-width: 600px) {
+  .mainbar-inner {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+/* =============================== FOOTER =============================== */
+.site-footer {
+  flex-shrink: 0;
+  background: var(--accent);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1rem 0;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.footer-logo {
+  height: 40px;
+  width: auto;
+}
+
+.site-footer p {
+  color: var(--card);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+/* =============================== BOTTONI =============================== */
+h1 {
+  text-align: center;
+}
+
+.btn-container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.titolo-secondario {
+  text-align: center;
+  font-size: 1.4rem;
+  color: white;
+  margin: 30px 0 10px;
+  font-weight: 700;
+}
+
+.btn-card {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  width: 180px;
+  height: 150px;
+  padding: 10px;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.btn-card span {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 5px 10px;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+.btn-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* Immagini bottoni */
+#btn-scarica { background-image: url('tutti_i_report.jpg'); }
+#btn-scarica-1 { background-image: url('annual_report_2024.jpg'); }
+#btn-scarica-2 { background-image: url('sostenibilità.jpg'); }
+#btn-scarica-3 { background-image: url('annual_report_2023.jpg'); }
+#btn-scarica-4 { background-image: url('annual_report_2022.jpg'); }
+#btn-scarica-5 { background-image: url('annual_report_2021.jpg'); }
+#btn-scarica-6 { background-image: url('annual_report_2020.jpg'); }
+
+/* =============================== RICONOSCIMENTI =============================== */
+.riconoscimenti {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: rgba(11, 18, 32, 0.95);   
+  backdrop-filter: blur(4px);                 /* effetto vetro */
+  border-radius: var(--radius);
+  margin-top: 40px;
+  color: white;
+}
+
+.riconoscimenti-titolo {
+  font-size: 1.4rem;
+  margin-bottom: 30px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.riconoscimenti-titolo strong {
+  font-weight: 700;
+}
+
+.loghi-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
+.logo-premio {
+  max-width: 140px;
+  height: auto;
+  opacity: 0.9;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.logo-premio:hover {
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .logo-premio {
+    max-width: 100px;
+  }
+}
